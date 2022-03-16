@@ -10,11 +10,12 @@ namespace Mission7.Models
     public static class IdentitySeedData
     {
         private const string adminUser = "Admin";
-        private const string adminPassword = "Password123456!";
+        private const string adminPassword = "413ExtraYeetPeriod(t)!";
+       
 
         //public static int num = 0;
 
-        public static async void EnsurePopulated (IApplicationBuilder app)
+        public static async void EnsurePopulated(IApplicationBuilder app)
         {
             AppidentityDBContex context = app.ApplicationServices
                 .CreateScope().ServiceProvider
@@ -31,11 +32,11 @@ namespace Mission7.Models
 
             IdentityUser user = await userManager.FindByIdAsync(adminUser);
 
-            if(user == null)
+            if (user == null)
             {
                 user = new IdentityUser(adminUser);
 
-                user.Email = "413ExtraYeetPeriod(t)!";
+                user.Email = "test@test.com";
                 user.PhoneNumber = "555-1234";
 
                 await userManager.CreateAsync(user, adminPassword);
